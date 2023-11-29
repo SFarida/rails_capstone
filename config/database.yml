@@ -22,6 +22,8 @@ default: &default
 development:
   <<: *default
   database: rails_capstone_development
+  username: postgres
+  password: pw4Admin
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -56,6 +58,8 @@ development:
 test:
   <<: *default
   database: rails_capstone_test
+  username: postgres
+  password: pw4Admin
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,5 +84,7 @@ test:
 production:
   <<: *default
   database: rails_capstone_production
-  username: rails_capstone
-  password: <%= ENV["RAILS_CAPSTONE_DATABASE_PASSWORD"] %>
+  # username: rails_capstone
+  # password: <%= ENV["RAILS_CAPSTONE_DATABASE_PASSWORD"] %>
+  username: postgres
+  password: pw4Admin
