@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <p>Welcome, <%= current_user.name %></p>
+      <p>Email: <%= current_user.email %></p>
+      <%= form_with(url: destroy_user_session_path, method: :delete, local: false) do |form| %>
+        <button type="submit" class="nav-link">Logout</button>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
