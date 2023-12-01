@@ -3,6 +3,9 @@ class CategoriesController < ApplicationController
 
     def index
         @categories = Category.where(user: current_user)
+        @categories.each do |cat|
+            puts "cat name: #{cat.name}"
+        end
     end
 
     def show
@@ -16,19 +19,22 @@ class CategoriesController < ApplicationController
     def create
         @category = Category.new(category_params)
         @category.user = current_user
-    
-        # respond_to do |format|
-        #   if @category.save
-        #     format.html { redirect_to recipe_url(@recipe), notice: 'Category was successfully created.' }
-        #     format.json { render :show, status: :created, location: @recipe }
-        #   else
-        #     format.html { render :new, status: :unprocessable_entity }
-        #     format.json { render json: @recipe.errors, status: :unprocessable_entity }
-        #   end
-        # end
+        puts "Attempting to save category: #{category_params}"
+        respond_to do |format|
+            if @category.save
+                puts "Category saved successfully"
+                format.html { redirect_to categories_path, notice: 'Category was successfully created.' }
+                format.json { render :show, status: :created, location: @category }
+            else
+                puts "Category save failed"
+                format.html { render :new, status: :unprocessable_entity }
+                format.json { render json: @category.errors, status: :unprocessable_entity }
+            end
+        end
     end
 
-    def recipe_params
-        params.require(:recipe).permit(:name, :icon)
+
+    def category_params
+        params.require(:category).permit(:name, :icon)
     end
 end

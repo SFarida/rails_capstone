@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'home#index'
-  resources :categories, only: [:index]
+  resources :categories, only: [:index, :new, :create], path_names: { new: 'new_category' }
 end

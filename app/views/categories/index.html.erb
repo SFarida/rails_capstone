@@ -1,1 +1,11 @@
 <h1>Category</h1>
+<div class="text-end my-5">
+  <button class="btn_bottom_border"><%= link_to "New Category", new_category_path, class: "text-decoration-none text-dark"%></button>
+</div>
+<div>
+  <ul>
+    <% @categories.each do |cat| %>
+      <li><%= cat.name %></li>
+    <% end %>
+  </ul>
+</div>
