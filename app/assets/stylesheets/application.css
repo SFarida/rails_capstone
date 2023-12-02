@@ -25,3 +25,10 @@
 .actions {
   width: 30%;
 }
+
+.submit-btn input {
+  color: #3498db;
+  background-color: transparent;
+  background-image: none;
+  border-color: #3498db;
+}

@@ -1,26 +1,30 @@
-<%= form_with(model: category) do |form| %>
-  <% if category.errors.any? %>
-    <div class="text-danger">
-      <h2>Error: <%= pluralize(category.errors.count, "error") %></h2>
-      <ul>
-        <% category.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class="d-flex justify-content-center">
+  <%= form_with(model: category) do |form| %>
+    <% if category.errors.any? %>
+      <div class="text-danger">
+        <h2>Error: <%= pluralize(category.errors.count, "error") %></h2>
+        <ul>
+          <% category.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="my-2">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="my-2">
+      <%= form.label :icon %>
+      <%= form.text_field :icon %>
+    </div>
+
+    <div class="d-flex justify-content-center my-4">
+      <div class="submit-btn">
+        <%= form.submit %>
+      </div>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :icon %>
-    <%= form.text_field :icon %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
