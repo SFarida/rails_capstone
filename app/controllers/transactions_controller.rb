@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
   before_action :authenticate_user!, :set_category
 
   def index
-    @transactions = Transaction.order(created_at: :desc)
+    @transactions = @category.transactions.order(created_at: :desc)
   end
 
   def show
@@ -10,12 +10,7 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    # @transaction = Transaction.new
-
     @transaction = @category.transactions.build
-
-    # @category = Category.find(params[:category_id])
-    # @transaction = @category.transactions.build
   end
 
   def create
