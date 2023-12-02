@@ -21,11 +21,11 @@ class TransactionsController < ApplicationController
     puts "Attempting to save category: #{transaction_params}"
     respond_to do |format|
       if @transaction.save
-        puts "Category saved successfully"
+        puts 'Category saved successfully'
         format.html { redirect_to category_transactions_path, notice: 'Transaction was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
-        puts "Category save failed"
+        puts 'Category save failed'
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @transaction.errors, status: :unprocessable_entity }
       end

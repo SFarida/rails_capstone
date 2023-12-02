@@ -21,6 +21,5 @@ RSpec.describe Category, type: :model do
     it 'has the right icon' do
       expect(category.icon).to eq('https://shorturl.at/dDKSZ')
     end
-
   end
 end
