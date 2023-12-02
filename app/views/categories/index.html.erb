@@ -2,20 +2,19 @@
   <div class="text-center">
     <h1>Category</h1>
   </div>
-  <div class="text-end my-5">
-    <button type="button" class="btn btn-outline-info"><%= link_to "New Category", new_category_path, class: "text-decoration-none text-dark"%></button>
-  </div>
   <div>
     <ul class="list-group">
       <% @categories.each do |cat| %>
         <li class="list-group-item d-flex justify-content-between align-items-center w-100">
-          <%= link_to category_path(cat), class: "link" do %>
-            <div class="d-flex justify-content-between align-items-center">
+          <%= link_to category_path(cat), class: "link link-underline-info" do %>
+            <div class="d-flex justify-content-between align-items-center me-3">
               <div class="ms-2 me-auto d-flex align-items-center">
                 <img class="icon-images img-fluid" src="<%= cat.icon %>">
                 <div class="fw-bold px-2"><%= cat.name %></div>
               </div>
-<!--              <span class="badge bg-info rounded-pill">14</span>-->
+              <span class="badge bg-info rounded-pill link-underline-success">
+                <%= cat.total_amount %>
+              </span>
             </div>
           <% end %>
           <div class="d-flex actions">
@@ -27,5 +26,8 @@
         </li>
       <% end %>
     </ul>
+  </div>
+  <div class="text-end my-5">
+    <button type="button" class="btn btn-outline-info"><%= link_to "New Category", new_category_path, class: "text-decoration-none text-dark"%></button>
   </div>
 </div>

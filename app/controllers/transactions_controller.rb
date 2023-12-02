@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
   before_action :authenticate_user!, :set_category
 
   def index
-    @transactions = Transaction.all
+    @transactions = Transaction.order(created_at: :desc)
   end
 
   def show
