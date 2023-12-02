@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
 
     def show
         @category = Category.includes(:transactions).find(params[:id])
+        redirect_to category_transactions_path(@category)
     end
 
     def new

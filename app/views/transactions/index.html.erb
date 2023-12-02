@@ -1,0 +1,11 @@
+<h1>Transactions</h1>
+<div class="text-end my-5">
+  <button class="btn_bottom_border"><%= link_to "New Transaction", new_category_transaction_path, class: "text-decoration-none text-dark"%></button>
+</div>
+<div>
+  <ul>
+    <% @transactions.each do |trx| %>
+      <li><%= trx.name %></li>
+    <% end %>
+  </ul>
+</div>

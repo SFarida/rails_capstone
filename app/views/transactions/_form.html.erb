@@ -1,9 +1,9 @@
-<%= form_with(model: category) do |form| %>
-  <% if category.errors.any? %>
+<%= form_with(model: [@category, @transaction]) do |form| %>
+  <% if transaction.errors.any? %>
     <div class="text-danger">
-      <h2>Error: <%= pluralize(category.errors.count, "error") %></h2>
+      <h2>Error: <%= pluralize(transaction.errors.count, "error") %></h2>
       <ul>
-        <% category.errors.each do |error| %>
+        <% transaction.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -16,8 +16,8 @@
   </div>
 
   <div>
-    <%= form.label :icon %>
-    <%= form.text_field :icon %>
+    <%= form.label :amount %>
+    <%= form.number_field :amount %>
   </div>
 
   <div>
