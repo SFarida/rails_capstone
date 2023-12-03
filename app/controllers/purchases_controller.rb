@@ -22,7 +22,9 @@ class PurchasesController < ApplicationController
     respond_to do |format|
       if @purchase.save
         puts 'Category saved successfully'
-        format.html { redirect_to category_purchases_path(@purchase.category_id), notice: 'Purchase was successfully created.' }
+        format.html do
+          redirect_to category_purchases_path(@purchase.category_id), notice: 'Purchase was successfully created.'
+        end
         format.json { render :show, status: :created, location: @category }
       else
         puts 'Category save failed'
