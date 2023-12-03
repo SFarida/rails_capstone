@@ -68,7 +68,7 @@ expenses with the total amount.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
- - [Video presentation](https://www.loom.com/share/4f2f9553418047dc82b6b9a313cfbf3c?sid=b4436b78-daea-440f-a6a0-14b338969b15)
+ - [Video presentation](https://www.loom.com/share/94c7659aa78c4cebbc4e65ee972ebefa?sid=f7d18781-e609-4e18-8431-34a2b300e2c7)
 -->
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
