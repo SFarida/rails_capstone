@@ -9,8 +9,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.includes(:transactions).find(params[:id])
-    redirect_to category_transactions_path(@category)
+    @category = Category.includes(:purchases).find(params[:id])
+    redirect_to category_purchases_path(@category)
   end
 
   def new
@@ -42,7 +42,7 @@ class CategoriesController < ApplicationController
     puts "Attempting to save category: #{category_params}"
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }
+        format.html { redirect_to category_purchases_path, notice: 'Category was successfully updated.' }
         format.json { render :show, status: :ok, location: @category }
       else
         format.html { render :edit, status: :unprocessable_entity }

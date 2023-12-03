@@ -1,3 +1,4 @@
+<% content_for :page_heading, "HOME" %>
 <div class="container">
   <div class="container my-3 d-flex justify-content-center">
     <div>
@@ -6,7 +7,7 @@
     </div>
   </div>
   <div class="container my-3 d-flex justify-content-center">
-    <%= link_to "Login", new_user_session_path, class: "btn btn-outline-info me-2" %>
-    <%= link_to "Register", new_user_registration_path, class: "btn btn-outline-info" %>
+    <%= link_to "Login", new_user_session_path, class: "btn btn-success me-2" %>
+    <%= link_to "Register", new_user_registration_path, class: "btn btn-success" %>
   </div>
 </div>

@@ -1,7 +1,5 @@
-<div class="container">
-  <div class="d-flex justify-content-center">
-    <h2>Log in</h2>
-  </div>
+<d<% content_for :page_heading, "LOGIN" %>iv class="container">
+
   <div class="d-flex justify-content-center">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
@@ -23,7 +21,7 @@
 
       <div class="d-flex justify-content-center my-4">
         <div class="actions">
-          <%= f.submit "Log in", class: "btn btn-outline-info" %>
+          <%= f.submit "Log in", class: "btn btn-success" %>
         </div>
       </div>
     <% end %>

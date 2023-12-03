@@ -183,6 +183,9 @@ If you like this project you can give us some stars and share with your friends
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank all the microverse staff for daily support and providing resources.
+Original design idea by [Gregoire Vella on Behance.](https://www.behance.net/gregoirevella)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

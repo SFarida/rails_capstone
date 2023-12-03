@@ -6,11 +6,11 @@ RSpec.describe Category, type: :model do
     Category.create(user_id: user.id, name: 'Drinks', icon: 'https://shorturl.at/dDKSZ')
   end
   let(:transaction1) do
-    Transaction.create(user_id: user.id, category_id: category.id, name: 'Fanta', amount: 400.0)
+    Purchase.create(user_id: user.id, category_id: category.id, name: 'Fanta', amount: 400.0)
   end
 
   let(:transaction2) do
-    Transaction.create(user_id: user.id, category_id: category.id, name: 'Coca cola', amount: 600.0)
+    Purchase.create(user_id: user.id, category_id: category.id, name: 'Coca cola', amount: 600.0)
   end
 
   describe 'attributes' do
