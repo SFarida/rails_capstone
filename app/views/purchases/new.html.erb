@@ -1,0 +1,11 @@
+<% content_for :page_heading, "NEW TRANSACTION" %>
+<div class="container text-center py-5">
+
+  <%= render "form", purchase: @purchase %>
+
+  <br>
+
+  <div>
+    <%= link_to "Back to purchases", categories_path %>
+  </div>
+</div>

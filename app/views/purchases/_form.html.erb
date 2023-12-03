@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center">
+  <%= form_with(model: [@category, @purchase]) do |form| %>
+    <% if purchase.errors.any? %>
+      <div class="text-danger">
+        <h2>Error: <%= pluralize(purchase.errors.count, "error") %></h2>
+        <ul>
+          <% purchase.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="my-2">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="my-2">
+      <%= form.label :amount %>
+      <%= form.number_field :amount %>
+    </div>
+
+    <div class="my-2">
+      <%= form.label :category_ids, "Categories" %>
+      <%= form.collection_select :category_id, @user.categories, :id, :name %>
+    </div>
+
+    <div class="d-flex justify-content-center my-4">
+      <div class="submit-btn">
+        <%= form.submit %>
+      </div>
+    </div>
+  <% end %>
+</div>

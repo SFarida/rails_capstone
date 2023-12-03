@@ -1,0 +1,18 @@
+databases:
+  - name: rails_capstone_production
+    databaseName: rails_capstone_production
+    user: rails_capstone_production
+
+services:
+  - type: web
+    name: rails_capstone_production
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: rails_capstone_production
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false

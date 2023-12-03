@@ -1,0 +1,38 @@
+<% content_for :page_heading, "TRANSACTIONS" %>
+<div class="constainer-fluid bg-light text-start d-flex justify-content-between py-2">
+  <h2>
+    <span><%= @category.name %></span>
+  </h2>
+  <h2>$
+    <%= @category.total_amount %>
+  </h2>
+</div>
+<div class="container">
+  <div>
+    <ul class="list-group">
+      <% @purchases.each do |trx| %>
+        <li class="list-group-item d-flex bg-light flex-column justify-content-between align-items-center w-100 mb-3">
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <div class="ms-2 me-auto d-flex align-items-center">
+                <img class="icon-images img-fluid" src="<%= @category.icon %>">
+                <div class="d-flex flex-column ms-3">
+                  <p class="fw-bold px-2">
+                    <%= trx.name %>
+                  </p>
+                  <p>
+                    <%= trx.created_at.strftime("%B %d, %Y %H:%M")  %>
+                  </p>
+                </div>
+              </div>
+              <span class="badge bg-info rounded-pill">$
+                <%= trx.amount %>
+              </span>
+            </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="text-center my-5 add-btn">
+    <button type="button" class="btn btn-success"><%= link_to "New Purchase", new_category_purchase_path, class: "text-decoration-none text-light"%></button>
+  </div>
+</div>
